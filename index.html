@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الشروق للمقاولات والنقل الثقيل | إدارة الحاج مرتضى حسني</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0F172A;
+      --navy-light: #1E293B;
+      --amber: #F59E0B;
+      --amber-dark: #D97706;
+      --amber-soft: #FEF3C7;
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --text: #0F172A;
+      --muted: #475569;
+      --border: #E2E8F0;
+      --success: #059669;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--amber), var(--amber-dark));
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 1.15rem;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      line-height: 1.25;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: #FCD34D;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--amber);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-amber {
+      background: var(--amber);
+      color: var(--navy);
+    }
+
+    .btn-amber:hover {
+      background: var(--amber-dark);
+      color: #fff;
+    }
+
+    .btn-outline-light {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-light);
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #fff;
+    }
+
+    .btn-success:hover {
+      filter: brightness(0.95);
+    }
+
+    .btn-sm {
+      padding: 7px 12px;
+      font-size: 0.82rem;
+      border-radius: 8px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .mobile-drawer {
+      display: none;
+      background: var(--navy-light);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 20px 18px;
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer a,
+    .mobile-drawer button {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 65%, #334155 100%);
+      color: #fff;
+      padding: 58px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 18% 20%, rgba(245, 158, 11, 0.16), transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .mgmt-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      color: #FDE68A;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 2.35rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span {
+      color: var(--amber);
+    }
+
+    .hero p {
+      color: #CBD5E1;
+      font-size: 1.02rem;
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .stat-num {
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--amber);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #E2E8F0;
+    }
+
+    .hero-card {
+      background: #fff;
+      color: var(--text);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      border-top: 5px solid var(--amber);
+    }
+
+    .hero-card h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .hero-card .sub {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .phone-highlight {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .phone-num {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .quick-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 38px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--amber-soft);
+      color: var(--amber-dark);
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+      border-color: var(--amber);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--amber-soft);
+      color: var(--amber-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .service-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .service-list li {
+      padding: 4px 0;
+      border-bottom: 1px dashed #E2E8F0;
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Quote / Contact Section */
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--amber-dark);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+    }
+
+    textarea.form-control {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .info-panel {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .info-panel h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--amber);
+    }
+
+    .info-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .info-label {
+      font-size: 0.8rem;
+      color: #94A3B8;
+    }
+
+    .info-val {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    /* Internal Operations Section (Hidden by default) */
+    #ops-section {
+      display: none;
+      background: #EEF2F6;
+      border-top: 3px solid var(--navy);
+      border-bottom: 3px solid var(--navy);
+    }
+
+    #ops-section.active {
+      display: block;
+    }
+
+    .ops-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .ops-grid-inputs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: right;
+    }
+
+    th {
+      background: #F1F5F9;
+      font-weight: 800;
+    }
+
+    /* Modal / WhatsApp Sheet */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .mobile-sheet {
+      width: 100%;
+      max-width: 390px;
+      background: #fff;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+      border-top: 6px solid var(--amber);
+    }
+
+    .sheet-header {
+      text-align: center;
+      border-bottom: 1px dashed #CBD5E1;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+    }
+
+    .sheet-title {
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .sheet-mgmt {
+      font-size: 0.82rem;
+      color: var(--amber-dark);
+      font-weight: 700;
+    }
+
+    .sheet-body {
+      font-size: 0.86rem;
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      white-space: pre-line;
+      margin-bottom: 14px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: #CBD5E1;
+      padding: 36px 0 24px;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 16px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: var(--navy);
+      color: #fff;
+      border-right: 4px solid var(--amber);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      z-index: 200;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+      .nav-links,
+      .nav-actions .desktop-only {
+        display: none;
+      }
+      .menu-toggle {
+        display: inline-flex;
+      }
+      .hero h1 {
+        font-size: 1.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <div class="brand-badge">ش</div>
+        <div>
+          <div class="brand-title">الشروق للمقاولات والنقل الثقيل</div>
+          <div class="brand-sub">إدارة / الحاج مرتضى حسني</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">الخدمات والأعمال</a>
+        <a href="#quote">طلب معاينة وتسعير</a>
+        <a id="fb-nav-link" href="https://www.facebook.com/share/g/1M5KR6beuk/" target="_blank" rel="noopener noreferrer">صفحتنا على فيسبوك</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:01002975199" class="btn btn-amber btn-sm desktop-only">اتصال: 01002975199</a>
+        <button type="button" class="btn btn-outline-light btn-sm desktop-only" onclick="toggleOpsSection()">إدارة التشغيل</button>
+        <button type="button" class="menu-toggle" onclick="toggleMobileMenu()">القائمة</button>
+      </div>
+    </div>
+
+    <div id="mobile-drawer" class="mobile-drawer">
+      <a href="#services" class="btn btn-outline-light" onclick="closeMobileMenu()">الخدمات والأعمال</a>
+      <a href="#quote" class="btn btn-outline-light" onclick="closeMobileMenu()">طلب معاينة وتسعير</a>
+      <a id="fb-mobile-link" href="https://www.facebook.com/share/g/1M5KR6beuk/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">صفحتنا على فيسبوك</a>
+      <a href="tel:01002975199" class="btn btn-amber">اتصال مباشر: 01002975199</a>
+      <button type="button" class="btn btn-outline-light" onclick="toggleOpsSection(); closeMobileMenu();">إدارة التشغيل</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="mgmt-pill">إدارة / الحاج مرتضى حسني</div>
+        <h1>الشروق للمقاولات <span>وأعمال الحفر والنقل الثقيل</span></h1>
+        <p>
+          تنفيذ كافة أعمال الحفر، اللوادر، الهراسات، النقل الثقيل بالقلابات، والتوريدات العمومية بكفاءة عالية والتزام تام بالمواعيد في مواقع العمل المختلفة. يتم تحديد التسعير مباشرة مع الإدارة حسب طبيعة الموقع وحجم العمل.
+        </p>
+        <div class="hero-cta">
+          <a href="#quote" class="btn btn-amber">اطلب معاينة أو تسعير الآن</a>
+          <a href="https://wa.me/201002975199" target="_blank" rel="noopener noreferrer" class="btn btn-success">تواصل واتساب مباشر</a>
+          <a id="fb-hero-link" href="https://www.facebook.com/share/g/1M5KR6beuk/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">صفحتنا على فيسبوك</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-box">
+            <div class="stat-num">5 قطاعات</div>
+            <div class="stat-label">حفر، لوادر، هراسات، نقل، توريدات</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">جاهزية فورية</div>
+            <div class="stat-label">معدات ثقيلة وسائقون متمرسون</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">تواصل مباشر</div>
+            <div class="stat-label">تسعير مرن حسب طبيعة كل موقع</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2>التواصل المباشر مع الإدارة</h2>
+        <p class="sub">إدارة / الحاج مرتضى حسني — للاستفسار وحجز المعدات والطلبات</p>
+
+        <div class="phone-highlight">
+          <div>
+            <div class="info-label" style="color: var(--muted);">رقم الإدارة الرسمي</div>
+            <div class="phone-num">01002975199</div>
+          </div>
+          <button type="button" class="btn btn-navy btn-sm" onclick="copyPhone()">نسخ الرقم</button>
+        </div>
+
+        <div class="quick-btns">
+          <a href="tel:01002975199" class="btn btn-amber">اتصال هاتفي</a>
+          <a href="https://wa.me/201002975199" target="_blank" rel="noopener noreferrer" class="btn btn-success">واتساب</a>
+        </div>
+
+        <a id="fb-card-link" href="https://www.facebook.com/share/g/1M5KR6beuk/" target="_blank" rel="noopener noreferrer" class="btn btn-navy" style="width: 100%;">
+          زيارة صفحتنا على فيسبوك
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">خدماتنا المتكاملة</span>
+        <h2>كافة أعمال الحفر والمعدات والتوريدات</h2>
+        <p>نغطي مراحل التجهيز والحفر والتسوية والدك والنقل والتوريد بالكامل، ويتم الاتفاق على السعر مباشرة عند التواصل.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-icon">01</div>
+            <h3>أعمال الحفر والحفارات</h3>
+            <p>حفر الأساسات، الخنادق، شبكات المرافق، وتمهيد الأراضي الصخرية والرملية بدقة وأمان.</p>
+            <ul class="service-list">
+              <li>حفر قواعد وأساسات المباني والمنشآت</li>
+              <li>حفر خطوط المياه والصرف والكابلات</li>
+              <li>تكسير وتسوية الطبقات الصلبة</li>
+            </ul>
+          </div>
+          <button type="button" class="btn btn-navy" onclick="selectServiceAndScroll('أعمال الحفر والحفارات')">طلب الخدمة</button>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">02</div>
+            <h3>اللوادر وأعمال التسوية</h3>
+            <p>تشغيل اللوادر لأعمال الردم، التسوية، التحميل، وتجهيز المواقع قبل وبعد التنفيذ.</p>
+            <ul class="service-list">
+              <li>تسوية وتمهيد المساحات والمواقع</li>
+              <li>تحميل المخلفات والتربة والسن والزلط</li>
+              <li>أعمال الردم والتشوين داخل المواقع</li>
+            </ul>
+          </div>
+          <button type="button" class="btn btn-navy" onclick="selectServiceAndScroll('اللوادر وأعمال التسوية')">طلب الخدمة</button>
+        </d
