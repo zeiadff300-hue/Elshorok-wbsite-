@@ -36,7 +36,6 @@
       padding: 0 20px;
     }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -118,7 +117,6 @@
     }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* Hero */
     .hero {
       padding: 64px 0 40px;
       border-bottom: 1px solid var(--border);
@@ -177,7 +175,6 @@
       font-size: 0.92rem;
     }
 
-    /* Sections */
     section { padding: 56px 0; }
 
     .section-head { margin-bottom: 28px; }
@@ -185,7 +182,6 @@
     .section-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 4px 0 8px; }
     .section-head p { color: var(--muted); max-width: 720px; }
 
-    /* Direct Contact Card */
     .contact-box {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -205,7 +201,6 @@
       margin: 6px 0 12px;
     }
 
-    /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -233,8 +228,273 @@
     .service-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
     .service-card p { color: var(--muted); font-size: 0.95rem; }
 
-    /* Quote Form */
     .quote-card {
       background: var(--surface);
-      border
-      
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    textarea { min-height: 95px; resize: vertical; margin-bottom: 16px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      display: none;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(15, 23, 42, 0.96);
+      border-top: 1px solid var(--border);
+    }
+
+    .mobile-bar .btn { flex: 1; padding: 11px 12px; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-bar { display: flex; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        <span class="logo-badge">ش</span>
+        <div>
+          <div class="brand-title">الشروق للمقاولات والنقل الثقيل</div>
+          <div class="brand-sub">إدارة / الحاج مرتضى حسني</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">الخدمات والأعمال</a>
+        <a href="#quote">طلب معاينة وتسعير</a>
+        <a href="https://www.facebook.com/share/g/1M5KR6beuk/" target="_blank" rel="noopener">صفحتنا على فيسبوك</a>
+        <a href="tel:01002975199" class="btn btn-primary">اتصال: 01002975199</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="kicker">إدارة / الحاج مرتضى حسني</span>
+        <h1>الشروق للمقاولات وأعمال الحفر والنقل الثقيل</h1>
+        <p>
+          تنفيذ كافة أعمال الحفر، اللوادر، الهراسات، النقل الثقيل بالقلابات، والتوريدات العمومية بكفاءة عالية والتزام تام بالمواعيد في مواقع العمل المختلفة. يتم تحديد التسعير مباشرة مع الإدارة حسب طبيعة الموقع وحجم العمل.
+        </p>
+
+        <div class="actions">
+          <a href="#quote" class="btn btn-primary">اطلب معاينة أو تسعير الآن</a>
+          <a href="https://wa.me/201002975199?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D8%B9%D8%A7%D9%8A%D9%86%D8%A9%20%D8%A3%D9%88%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D9%84%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D9%88%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D9%82." target="_blank" rel="noopener" class="btn btn-wa">تواصل واتساب مباشر</a>
+          <a href="https://www.facebook.com/share/g/1M5KR6beuk/" target="_blank" rel="noopener" class="btn btn-outline">صفحتنا على فيسبوك</a>
+        </div>
+
+        <div class="highlights">
+          <div class="highlight-card">
+            <strong>5 قطاعات</strong>
+            <span>حفر، لوادر، هراسات، نقل، توريدات</span>
+          </div>
+          <div class="highlight-card">
+            <strong>جاهزية فورية</strong>
+            <span>معدات ثقيلة وسائقون متمرسون</span>
+          </div>
+          <div class="highlight-card">
+            <strong>تواصل مباشر</strong>
+            <span>تسعير مرن حسب طبيعة كل موقع</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="tag" style="color: var(--accent); font-weight: 700;">التواصل المباشر مع الإدارة</div>
+            <h2 style="font-size: 1.5rem; margin-top: 4px;">إدارة / الحاج مرتضى حسني — للاستفسار وحجز المعدات والطلبات</h2>
+            <div class="phone-display">رقم الإدارة الرسمي: <span id="officialPhone">01002975199</span></div>
+          </div>
+
+          <div class="actions" style="margin-bottom: 0;">
+            <button type="button" class="btn btn-outline" onclick="copyPhone()">نسخ الرقم</button>
+            <a href="tel:01002975199" class="btn btn-primary">اتصال هاتفي</a>
+            <a href="https://wa.me/201002975199" target="_blank" rel="noopener" class="btn btn-wa">واتساب</a>
+            <a href="https://www.facebook.com/share/g/1M5KR6beuk/" target="_blank" rel="noopener" class="btn btn-outline">زيارة صفحتنا على فيسبوك</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="tag">خدماتنا المتكاملة — 5 قطاعات</span>
+          <h2>كافة أعمال الحفر والمعدات والتوريدات</h2>
+          <p>نغطي مراحل التجهيز والحفر والتسوية والدك والنقل والتوريد بالكامل، ويتم الاتفاق على السعر مباشرة عند التواصل.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-num">01</span>
+            <h3>أعمال الحفر والحفارات</h3>
+            <p>حفر الأساسات، الخنادق، شبكات المرافق، وتمهيد الأراضي الصخرية والرملية بدقة.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">02</span>
+            <h3>اللوادر</h3>
+            <p>أعمال التحميل، التسوية الأولية، إزالة المخلفات، ومناولة المواد داخل المواقع بكفاءة.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">03</span>
+            <h3>الهراسات</h3>
+            <p>دك التربة والطبقات وتجهيز الأرضيات والطرق والمواقع قبل التأسيس أو الرصف.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">04</span>
+            <h3>النقل الثقيل بالقلابات</h3>
+            <p>نقل الأتربة والردميات ومواد البناء والمخلفات بكميات مختلفة وفق جداول تشغيل منتظمة.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">05</span>
+            <h3>التوريدات العمومية</h3>
+            <p>توريد خامات ومواد المواقع المختلفة حسب احتياج المشروع وحجم العمل المطلوب.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote">
+      <div class="container">
+        <div class="section-head">
+          <span class="tag">طلب معاينة وتسعير</span>
+          <h2>احجز معدتك أو اطلب معاينة للموقع</h2>
+          <p>أدخل بيانات موقعك ونوع العمل المطلوب وسيتم توجيه الطلب مباشرة إلى واتساب الإدارة لتحديد التسعير المناسب.</p>
+        </div>
+
+        <form class="quote-card" onsubmit="sendQuoteToWhatsApp(event)">
+          <div class="form-grid">
+            <div>
+              <label for="clientName">الاسم</label>
+              <input id="clientName" type="text" placeholder="اكتب اسمك" required />
+            </div>
+
+            <div>
+              <label for="clientPhone">رقم الهاتف / واتساب</label>
+              <input id="clientPhone" type="tel" placeholder="01xxxxxxxxx" required />
+            </div>
+
+            <div>
+              <label for="serviceType">القطاع / المعدة المطلوبة</label>
+              <select id="serviceType">
+                <option value="أعمال الحفر والحفارات">أعمال الحفر والحفارات</option>
+                <option value="اللوادر">اللوادر</option>
+                <option value="الهراسات">الهراسات</option>
+                <option value="النقل الثقيل بالقلابات">النقل الثقيل بالقلابات</option>
+                <option value="التوريدات العمومية">التوريدات العمومية</option>
+                <option value="أكثر من قطاع / معاينة كاملة">أكثر من قطاع / معاينة كاملة</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="siteLocation">موقع العمل / المنطقة</label>
+              <input id="siteLocation" type="text" placeholder="اكتب موقع العمل أو المنطقة" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="workDetails">تفاصيل العمل أو المدة التقريبية</label>
+            <textarea id="workDetails" placeholder="اكتب طبيعة العمل، عدد الساعات أو الأيام أو النقلات التقريبية، وموعد البدء المطلوب..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-wa">إرسال طلب المعاينة والتسعير عبر واتساب</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      الشروق للمقاولات وأعمال الحفر والنقل الثقيل — إدارة / الحاج مرتضى حسني | هاتف: 01002975199
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a href="tel:01002975199" class="btn btn-primary">اتصال</a>
+    <a href="https://wa.me/201002975199" target="_blank" rel="noopener" class="btn btn-wa">واتساب</a>
+  </div>
+
+  <script>
+    function copyPhone() {
+      const phone = "01002975199";
+      navigator.clipboard?.writeText(phone).then(() => {
+        alert("تم نسخ رقم الإدارة: " + phone);
+      }).catch(() => {
+        alert("رقم الإدارة: " + phone);
+      });
+    }
+
+    function sendQuoteToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById("clientName").value.trim();
+      const phone = document.getElementById("clientPhone").value.trim();
+      const service = document.getElementById("serviceType").value;
+      const location = document.getElementById("siteLocation").value.trim();
+      const details = document.getElementById("workDetails").value.trim();
+
+      const message =
+        `طلب معاينة وتسعير - الشروق للمقاولات\n` +
+        `الاسم: ${name}\n` +
+        `رقم التواصل: ${phone}\n` +
+        `القطاع المطلوب: ${service}\n` +
+        `موقع العمل: ${location}\n` +
+        `التفاصيل: ${details || "لم تُذكر"}`;
+
+      const url = `https://wa.me/201002975199?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener");
+    }
+  </script>
+</body>
+                                                                   </html>
+  
